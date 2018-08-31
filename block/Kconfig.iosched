@@ -31,6 +31,12 @@ config IOSCHED_CFQ
 	  and server systems.
 
 	  This is the default I/O scheduler.
+	  
+config IOSCHED_FIOPS
+	tristate "FIOPS I/O scheduler"
+	default y
+	—help—
+	The FIOPS I/O scheduler. WJH.	  
 
 config CFQ_GROUP_IOSCHED
 	bool "CFQ Group Scheduling support"
@@ -38,12 +44,6 @@ config CFQ_GROUP_IOSCHED
 	default n
 	---help---
 	  Enable group IO scheduling in CFQ.
-	  
-config IOSCHED_FIOPS
-	tristate “FIOPS I/O scheduler”
-	default y
-	—help—
-	The FIOPS I/O scheduler. WJH.
 	
 choice
 	prompt "Default I/O scheduler"
