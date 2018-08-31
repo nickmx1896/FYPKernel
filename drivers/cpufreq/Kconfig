@@ -113,10 +113,16 @@ config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	  'interactive' governor for latency-sensitive workloads.
 
 config CPU_FREQ_DEFAULT_GOV_SMARTASS2
-        bool "smartass2"
-        select CPU_FREQ_GOV_SMARTASS2
-        help
-        Use the CPUFreq governor 'smartassV2' as default.	  
+	bool "smartass2"
+    select CPU_FREQ_GOV_SMARTASS2
+	help
+		Use the CPUFreq governor 'smartassV2' as default.	  
+		
+config CPU_FREQ_DEFAULT_GOV_SMARTMAX
+	bool "smartmax"
+	select CPU_FREQ_GOV_SMARTMAX
+	help
+	  Use the CPUFreq governor 'smartmax' as default.
 endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
@@ -216,11 +222,18 @@ config CPU_FREQ_GOV_CONSERVATIVE
 	  If in doubt, say N.
 	  
 config CPU_FREQ_GOV_SMARTASS2
-       tristate "'smartassV2' cpufreq governor"
-       depends on CPU_FREQ
-       help
-         'smartassV2' - a "smart" optimized governor!
+    tristate "'smartassV2' cpufreq governor"
+    depends on CPU_FREQ
+    help
+      'smartassV2' - a "smart" optimized governor!
 
+	  If in doubt, say N.
+	  
+config CPU_FREQ_GOV_SMARTMAX
+	tristate "'smartmax' cpufreq governor"  
+	depends on CPU_FREQ
+	help
+	  'smartmax' - a "smart" optimized governor!
 	  If in doubt, say N.
 		 
 config CPUFREQ_DT
