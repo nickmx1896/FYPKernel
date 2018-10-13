@@ -111,7 +111,7 @@ config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	  you to get a full dynamic cpu frequency capable system by simply
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
-
+	  
 config CPU_FREQ_DEFAULT_GOV_SMARTASS2
 	bool "smartass2"
     select CPU_FREQ_GOV_SMARTASS2
@@ -195,8 +195,8 @@ config CPU_FREQ_GOV_INTERACTIVE
 
 	  For details, take a look at linux/Documentation/cpu-freq.
 
-	  If in doubt, say N.
-
+	  If in doubt, say N.  
+	  
 config CPU_FREQ_GOV_CONSERVATIVE
 	tristate "'conservative' cpufreq governor"
 	depends on CPU_FREQ
